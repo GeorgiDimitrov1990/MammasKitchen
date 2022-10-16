@@ -8,7 +8,6 @@
     using MammasKitchen.Data.Models;
     using MammasKitchen.Data.Repositories;
     using MammasKitchen.Data.Seeding;
-    using MammasKitchen.Services.Data;
     using MammasKitchen.Services.Mapping;
     using MammasKitchen.Services.Messaging;
     using MammasKitchen.Web.ViewModels;
@@ -64,7 +63,6 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
         }
 
         private static void Configure(WebApplication app)

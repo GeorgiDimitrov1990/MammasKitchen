@@ -1,0 +1,12 @@
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\bin\Debug\net6.0\MammasKitchen.Services.Messaging.deps.json
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\bin\Debug\net6.0\MammasKitchen.Services.Messaging.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\bin\Debug\net6.0\ref\MammasKitchen.Services.Messaging.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\bin\Debug\net6.0\MammasKitchen.Services.Messaging.pdb
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\MammasKitchen.Services.Messaging.csproj.AssemblyReference.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\MammasKitchen.Services.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\MammasKitchen.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\MammasKitchen.Services.Messaging.AssemblyInfo.cs
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\MammasKitchen.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\MammasKitchen.Services.Messaging.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\ref\MammasKitchen.Services.Messaging.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Messaging\obj\Debug\net6.0\MammasKitchen.Services.Messaging.pdb

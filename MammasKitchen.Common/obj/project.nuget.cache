@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "CnyCs3JZVQtaefK+EW5pJreBk+TRt1ke9paVJXqH2L09rlwXTIdXehgBMnB2IOFceh2LF6H/73CsIsYlrsefZQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\MammasKitchen.Common\\MammasKitchen.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\georgi.dimitrov\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "C:\\Users\\georgi.dimitrov\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+  ],
+  "logs": []
+}

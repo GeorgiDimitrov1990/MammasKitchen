@@ -1,0 +1,7 @@
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Tests\MammasKitchen.Web.Tests\obj\Debug\net6.0\MammasKitchen.Web.Tests.csproj.AssemblyReference.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Tests\MammasKitchen.Web.Tests\obj\Debug\net6.0\MvcTestingAppManifest.json
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Tests\MammasKitchen.Web.Tests\obj\Debug\net6.0\MammasKitchen.Web.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Tests\MammasKitchen.Web.Tests\obj\Debug\net6.0\MammasKitchen.Web.Tests.AssemblyInfoInputs.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Tests\MammasKitchen.Web.Tests\obj\Debug\net6.0\MammasKitchen.Web.Tests.AssemblyInfo.cs
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Tests\MammasKitchen.Web.Tests\obj\Debug\net6.0\MammasKitchen.Web.Tests.csproj.CoreCompileInputs.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Tests\MammasKitchen.Web.Tests\obj\Debug\net6.0\MammasKitchen.Web.Tests.MvcApplicationPartsAssemblyInfo.cache

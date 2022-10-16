@@ -40,4 +40,8 @@
     <ProjectReference Include="..\MammasKitchen.Web.Infrastructure\MammasKitchen.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\MammasKitchen.Web.ViewModels\MammasKitchen.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Administration\Views\Dashboard\" />
+  </ItemGroup>
 </Project>

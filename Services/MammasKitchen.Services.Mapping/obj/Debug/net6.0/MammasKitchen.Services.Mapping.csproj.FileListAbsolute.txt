@@ -1,0 +1,12 @@
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\bin\Debug\net6.0\MammasKitchen.Services.Mapping.deps.json
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\bin\Debug\net6.0\MammasKitchen.Services.Mapping.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\bin\Debug\net6.0\ref\MammasKitchen.Services.Mapping.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\bin\Debug\net6.0\MammasKitchen.Services.Mapping.pdb
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\MammasKitchen.Services.Mapping.csproj.AssemblyReference.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\MammasKitchen.Services.Mapping.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\MammasKitchen.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\MammasKitchen.Services.Mapping.AssemblyInfo.cs
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\MammasKitchen.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\MammasKitchen.Services.Mapping.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\ref\MammasKitchen.Services.Mapping.dll
+C:\Users\georgi.dimitrov\Desktop\MammasKitchen\Services\MammasKitchen.Services.Mapping\obj\Debug\net6.0\MammasKitchen.Services.Mapping.pdb
