@@ -1,13 +1,16 @@
 ﻿namespace MammasKitchen.Web.Controllers
 {
     using System.Diagnostics;
-
     using MammasKitchen.Web.ViewModels;
 
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
+        public HomeController()
+        {
+        }
+
         public IActionResult Index()
         {
             return this.View();

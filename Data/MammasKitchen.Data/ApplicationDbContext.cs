@@ -24,6 +24,28 @@
         {
         }
 
+        public DbSet<CartItem> CartItems { get; set; }
+
+        public DbSet<Discount> Discounts { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
+        public DbSet<OrderItem> OrderItems { get; set; }
+
+        public DbSet<PaymentDetail> PaymentDetails { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+
+        public DbSet<ProductSubcategory> Subcategories { get; set; }
+
+        public DbSet<ShoppingSession> ShoppingSessions { get; set; }
+
+        public DbSet<UserAddress> UserAddresses { get; set; }
+
+        public DbSet<UserPayment> UserPayments { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

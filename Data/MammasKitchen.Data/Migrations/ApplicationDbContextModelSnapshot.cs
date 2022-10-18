@@ -88,8 +88,14 @@ namespace MammasKitchen.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -142,19 +148,212 @@ namespace MammasKitchen.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("MammasKitchen.Data.Models.Setting", b =>
+            modelBuilder.Entity("MammasKitchen.Data.Models.CartItem", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("ShoppingSessionId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique()
+                        .HasFilter("[ProductId] IS NOT NULL");
+
+                    b.HasIndex("ShoppingSessionId");
+
+                    b.ToTable("CartItems");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.Discount", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("DiscountPercent")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Discounts");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.OrderDetail", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentDetailsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PaymentDetailsId")
+                        .IsUnique()
+                        .HasFilter("[PaymentDetailsId] IS NOT NULL");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.OrderItem", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderDetailId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderDetailId");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique()
+                        .HasFilter("[ProductId] IS NOT NULL");
+
+                    b.ToTable("OrderItems");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.PaymentDetail", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Provider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentDetails");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.Product", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DiscountId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("SKU")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubcategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DiscountId")
+                        .IsUnique()
+                        .HasFilter("[DiscountId] IS NOT NULL");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("SubcategoryId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ProductCategory", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -165,14 +364,153 @@ namespace MammasKitchen.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Value")
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TestId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Settings");
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductCategories");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ProductSubcategory", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Subcategories");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ShoppingSession", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("ShoppingSessions");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.UserAddress", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StreetAddress1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StreetAddress2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telephone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("UserAddresses");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.UserPayment", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Expiry")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PaymentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Provider")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique()
+                        .HasFilter("[UserId] IS NOT NULL");
+
+                    b.ToTable("UserPayments");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -281,6 +619,109 @@ namespace MammasKitchen.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("MammasKitchen.Data.Models.CartItem", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.Product", "Product")
+                        .WithOne("CartItem")
+                        .HasForeignKey("MammasKitchen.Data.Models.CartItem", "ProductId");
+
+                    b.HasOne("MammasKitchen.Data.Models.ShoppingSession", "ShoppingSession")
+                        .WithMany("CartItems")
+                        .HasForeignKey("ShoppingSessionId");
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ShoppingSession");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.OrderDetail", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.PaymentDetail", "PaymentDetails")
+                        .WithOne("OrderDetail")
+                        .HasForeignKey("MammasKitchen.Data.Models.OrderDetail", "PaymentDetailsId");
+
+                    b.HasOne("MammasKitchen.Data.Models.ApplicationUser", "User")
+                        .WithOne("OrderDetail")
+                        .HasForeignKey("MammasKitchen.Data.Models.OrderDetail", "UserId");
+
+                    b.Navigation("PaymentDetails");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.OrderItem", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.OrderDetail", "OrderDetail")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderDetailId");
+
+                    b.HasOne("MammasKitchen.Data.Models.Product", "Product")
+                        .WithOne("OrderItem")
+                        .HasForeignKey("MammasKitchen.Data.Models.OrderItem", "ProductId");
+
+                    b.Navigation("OrderDetail");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.Product", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.Discount", "Discount")
+                        .WithOne("Product")
+                        .HasForeignKey("MammasKitchen.Data.Models.Product", "DiscountId");
+
+                    b.HasOne("MammasKitchen.Data.Models.ProductSubcategory", "Subcategory")
+                        .WithMany()
+                        .HasForeignKey("SubcategoryId");
+
+                    b.Navigation("Discount");
+
+                    b.Navigation("Subcategory");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ProductCategory", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.Product", null)
+                        .WithMany("ProductCategory")
+                        .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ProductSubcategory", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.ProductCategory", "Category")
+                        .WithMany("Subcategories")
+                        .HasForeignKey("CategoryId");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ShoppingSession", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.ApplicationUser", "User")
+                        .WithOne("ShoppingSession")
+                        .HasForeignKey("MammasKitchen.Data.Models.ShoppingSession", "UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.UserAddress", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.ApplicationUser", "User")
+                        .WithOne("UserAddress")
+                        .HasForeignKey("MammasKitchen.Data.Models.UserAddress", "UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.UserPayment", b =>
+                {
+                    b.HasOne("MammasKitchen.Data.Models.ApplicationUser", "User")
+                        .WithOne("UserPayment")
+                        .HasForeignKey("MammasKitchen.Data.Models.UserPayment", "UserId");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("MammasKitchen.Data.Models.ApplicationRole", null)
@@ -338,7 +779,49 @@ namespace MammasKitchen.Data.Migrations
 
                     b.Navigation("Logins");
 
+                    b.Navigation("OrderDetail");
+
                     b.Navigation("Roles");
+
+                    b.Navigation("ShoppingSession");
+
+                    b.Navigation("UserAddress");
+
+                    b.Navigation("UserPayment");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.Discount", b =>
+                {
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.OrderDetail", b =>
+                {
+                    b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.PaymentDetail", b =>
+                {
+                    b.Navigation("OrderDetail");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.Product", b =>
+                {
+                    b.Navigation("CartItem");
+
+                    b.Navigation("OrderItem");
+
+                    b.Navigation("ProductCategory");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ProductCategory", b =>
+                {
+                    b.Navigation("Subcategories");
+                });
+
+            modelBuilder.Entity("MammasKitchen.Data.Models.ShoppingSession", b =>
+                {
+                    b.Navigation("CartItems");
                 });
 #pragma warning restore 612, 618
         }
