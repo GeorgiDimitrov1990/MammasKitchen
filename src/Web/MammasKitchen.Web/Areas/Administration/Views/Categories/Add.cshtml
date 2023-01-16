@@ -1,0 +1,28 @@
+﻿@model CategoryInputModel
+@{
+    this.ViewData["Title"] = "Add category";
+}
+
+<div class="text-center">
+    <h1>@this.ViewData["Title"]</h1>
+
+    <form method="post" class="col-lg-6 offset-lg-3">
+        <div class="form-grup m-2">
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" placeholder="Name of the category..." />
+        </div>
+
+        <div class="form-grup m-2">
+            <span asp-validation-for="Description" class="text-danger"></span>
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" placeholder="Description of the category..."/>
+        </div>
+
+        <div class="form-grup m-4 form-button">
+            <input type="submit" class="btn btn-danger" value="Add category" />
+        </div>
+
+        @*create view for confirmation*@
+    </form>
+</div>

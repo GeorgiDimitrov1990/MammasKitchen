@@ -29,9 +29,16 @@
             .To<TModel>()
             .ToListAsync();
 
-        public async Task AddCategory(CategoryInputModel inputModel)
+        public async Task AddCategoryAsync(CategoryInputModel inputModel)
         {
+            var category = new Category
+            {
+                Name = inputModel.Name,
+                Description = inputModel.Description,
+            };
 
+            await this.categoryRepository.AddAsync(category);
+            await this.categoryRepository.SaveChangesAsync();
         }
     }
 }
