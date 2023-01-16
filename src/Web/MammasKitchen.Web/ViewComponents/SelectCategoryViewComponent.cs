@@ -1,6 +1,5 @@
 ﻿namespace MammasKitchen.Web.ViewComponents
 {
-    using System.Threading.Tasks;
 
     using MammasKitchen.Services.Data.Interfaces;
     using MammasKitchen.Web.ViewModels.Common;
