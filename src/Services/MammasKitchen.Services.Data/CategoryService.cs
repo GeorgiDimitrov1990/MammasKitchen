@@ -27,5 +27,10 @@
             .AllAsNoTracking()
             .To<TModel>()
             .ToListAsync();
+
+        public async Task AddCategory(CategoryInputModel)
+        {
+
+        }
     }
 }
