@@ -10,6 +10,7 @@
     using MammasKitchen.Data.Models;
     using MammasKitchen.Services.Data.Interfaces;
     using MammasKitchen.Services.Mapping;
+    using MammasKitchen.Web.ViewModels.Category;
     using Microsoft.EntityFrameworkCore;
 
     public class CategoryService : ICategoryService
@@ -28,7 +29,7 @@
             .To<TModel>()
             .ToListAsync();
 
-        public async Task AddCategory(CategoryInputModel)
+        public async Task AddCategory(CategoryInputModel inputModel)
         {
 
         }
