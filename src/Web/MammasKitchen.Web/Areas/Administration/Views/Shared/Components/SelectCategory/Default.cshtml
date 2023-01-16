@@ -1,0 +1,6 @@
+﻿@model IEnumerable<SelectViewModel>
+
+@foreach (var item in this.Model)
+{
+    <option value="@item.Id">@item.Name</option>
+}

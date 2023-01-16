@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "hCUT5rK6PjFJxbfiWzYpmjyvqICr9UGprpSNrGceyfAugk/Vo214wrDIE9Elh80+y9IVFvRne7ccv2AL9vGGSQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Data\\MammasKitchen.Data.Common\\MammasKitchen.Data.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\georgi.dimitrov\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.435\\stylecop.analyzers.1.2.0-beta.435.nupkg.sha512",
+    "C:\\Users\\georgi.dimitrov\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "C:\\Users\\georgi.dimitrov\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

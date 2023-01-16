@@ -1,0 +1,13 @@
+{
+  "MammasKitchen.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\MammasKitchen.Common",
+  "MammasKitchen.Data.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Data\\MammasKitchen.Data.Common",
+  "MammasKitchen.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Data\\MammasKitchen.Data",
+  "MammasKitchen.Data.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Data\\MammasKitchen.Data.Models",
+  "MammasKitchen.Services.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Services\\MammasKitchen.Services.Data",
+  "MammasKitchen.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Services\\MammasKitchen.Services",
+  "MammasKitchen.Services.Mapping, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Services\\MammasKitchen.Services.Mapping",
+  "MammasKitchen.Services.Messaging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Services\\MammasKitchen.Services.Messaging",
+  "MammasKitchen.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Web\\MammasKitchen.Web",
+  "MammasKitchen.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Web\\MammasKitchen.Web.Infrastructure",
+  "MammasKitchen.Web.ViewModels, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\georgi.dimitrov\\Desktop\\MammasKitchen\\src\\Web\\MammasKitchen.Web.ViewModels"
+}
