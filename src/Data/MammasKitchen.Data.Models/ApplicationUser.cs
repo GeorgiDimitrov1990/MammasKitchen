@@ -40,6 +40,10 @@ namespace MammasKitchen.Data.Models
 
         public virtual OrderDetail OrderDetail { get; set; }
 
+        public string ImageId { get; set; }
+
+        public virtual Image Image { get; set; }
+
         public virtual ICollection<IdentityUserRole<string>> Roles { get; set; }
 
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; set; }
