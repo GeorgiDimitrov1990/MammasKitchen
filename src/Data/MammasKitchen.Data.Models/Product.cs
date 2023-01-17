@@ -11,6 +11,7 @@
         {
             this.Id = Guid.NewGuid().ToString();
             this.Categories = new HashSet<Category>();
+            this.Images = new HashSet<Image>();
         }
 
         public string Name { get; set; }

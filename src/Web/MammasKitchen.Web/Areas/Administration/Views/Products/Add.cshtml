@@ -32,8 +32,10 @@
             </select>
         </div>
 
-        <div>
-            @*TO DO: Subcategory*@
+        <div class="form-grup m-2">
+            <span asp-validation-for="Images" class="text-danger"></span>
+            <label asp-for="Images"></label>
+            <input asp-for="Images" class="form-control" placeholder="Images of the product..."/>
         </div>
 
         <div class="form-grup m-4 form-button">

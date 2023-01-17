@@ -5,11 +5,11 @@
     using MammasKitchen.Web.ViewModels.Category;
     using Microsoft.AspNetCore.Mvc;
 
-    public class Categories : AdministrationController
+    public class CategoriesController : AdministrationController
     {
         private readonly ICategoryService categoryService;
 
-        public Categories(ICategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService)
         {
             this.categoryService = categoryService;
         }
