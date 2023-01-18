@@ -1,6 +1,7 @@
 ﻿namespace MammasKitchen.Services.Data
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
@@ -8,6 +9,7 @@
     using MammasKitchen.Data.Common.Repositories;
     using MammasKitchen.Data.Models;
     using MammasKitchen.Services.Data.Interfaces;
+    using MammasKitchen.Services.Mapping;
     using MammasKitchen.Web.ViewModels.Products;
     using Microsoft.EntityFrameworkCore;
 
@@ -39,29 +41,49 @@
             };
 
             // Creating directory and adding image
-            Directory.CreateDirectory($"{imagePath}/recipes/");
-            foreach (var image in inputModel.Images)
+            Directory.CreateDirectory($"{imagePath}/products/");
+
+            if (inputModel.Images != null)
             {
-                var extension = Path.GetExtension(image.FileName).TrimStart('.');
-                if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
+                foreach (var image in inputModel.Images)
                 {
-                    throw new Exception($"Invalid image extension {extension}");
+                    var extension = Path.GetExtension(image.FileName).TrimStart('.');
+                    if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
+                    {
+                        throw new Exception($"Invalid image extension {extension}");
+                    }
+
+                    var dbImage = new Image
+                    {
+                        AddedByUserId = userId,
+                        Extension = extension,
+                    };
+                    newProduct.Images.Add(dbImage);
+
+                    var physicalPath = $"{imagePath}/products/{dbImage.Id}.{extension}";
+                    using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
+                    await image.CopyToAsync(fileStream);
                 }
-
-                var dbImage = new Image
-                {
-                    AddedByUserId = userId,
-                    Extension = extension,
-                };
-                newProduct.Images.Add(dbImage);
-
-                var physicalPath = $"{imagePath}/recipes/{dbImage.Id}.{extension}";
-                using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
-                await image.CopyToAsync(fileStream);
             }
 
             await this.productRepository.AddAsync(newProduct);
             await this.productRepository.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<T>> GetItemsPerPageAsync<T>(int page, int itemsPerPage = 12)
+        {
+            return await this.productRepository
+                .AllAsNoTracking()
+                .OrderByDescending(x => x.Id)
+                .Skip((page - 1) * itemsPerPage)
+                .Take(itemsPerPage)
+                .To<T>()
+                .ToListAsync();
+        }
+
+        public int GetCount()
+        {
+            return this.productRepository.AllAsNoTracking().Count();
         }
     }
 }

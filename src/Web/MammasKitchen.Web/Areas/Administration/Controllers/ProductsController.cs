@@ -39,12 +39,7 @@
 
             await this.productService.AddProduct(inputModel, imagePath, userId);
 
-            return this.RedirectToAction(nameof(this.All));
-        }
-
-        public IActionResult All()
-        {
-            return this.View();
+            return this.Redirect("/#menu");
         }
     }
 }

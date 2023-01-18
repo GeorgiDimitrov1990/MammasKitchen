@@ -2,45 +2,45 @@
 @{
     this.ViewData["Title"] = "Add product";
 }
+<section class="sample-page">
+    <div class="text-center container">
+        <h1>@this.ViewData["Title"]</h1>
 
-<div class="text-center">
-    <h1>@this.ViewData["Title"]</h1>
+        <form method="post" class="col-lg-6 offset-lg-3" enctype="multipart/form-data">
+            <div class="form-grup m-2">
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" placeholder="Name of the product..." />
+            </div>
 
-    <form method="post" class="col-lg-6 offset-lg-3" enctype="multipart/form-data">
-        <div class="form-grup m-2">
-            <span asp-validation-for="Name" class="text-danger"></span>
-            <label asp-for="Name"></label>
-            <input asp-for="Name" class="form-control" placeholder="Name of the product..." />
-        </div>
+            <div class="form-grup m-2">
+                <span asp-validation-for="Description" class="text-danger"></span>
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control" placeholder="Description of the product..."></textarea>
+            </div>
 
-        <div class="form-grup m-2">
-            <span asp-validation-for="Description" class="text-danger"></span>
-            <label asp-for="Description"></label>
-            <textarea asp-for="Description" class="form-control" placeholder="Description of the product..."></textarea>
-        </div>
+            <div class="form-grup m-2">
+                <span asp-validation-for="Price" class="text-danger"></span>
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control" placeholder="Price of the product..." />
+            </div>
 
-        <div class="form-grup m-2">
-            <span asp-validation-for="Price" class="text-danger"></span>
-            <label asp-for="Price"></label>
-            <input asp-for="Price" class="form-control" placeholder="Price of the product..." />
-        </div>
+            <div class="form-grup m-2">
+                <label>Categories</label>
+                <select asp-for="CategoriesId" class="form-select" multiple>
+                    <vc:select-category></vc:select-category>
+                </select>
+            </div>
 
-        <div class="form-grup m-2">
-            <label>Categories</label>
-            <select asp-for="CategoriesId" class="form-select" multiple>
-                <vc:select-category></vc:select-category>
-            </select>
-        </div>
+            <div class="form-grup m-2">
+                <span asp-validation-for="Images" class="text-danger"></span>
+                <label asp-for="Images"></label>
+                <input asp-for="Images" class="form-control" placeholder="Images of the product..." />
+            </div>
 
-        <div class="form-grup m-2">
-            <span asp-validation-for="Images" class="text-danger"></span>
-            <label asp-for="Images"></label>
-            <input asp-for="Images" class="form-control" placeholder="Images of the product..."/>
-        </div>
-
-        <div class="form-grup m-4 form-button">
-            <input type="submit" class="btn btn-danger" value="Add product" />
-        </div>
-    </form>
-</div>
-
+            <div class="form-grup m-4 form-button">
+                <input type="submit" class="btn btn-danger" value="Add product" />
+            </div>
+        </form>
+    </div>
+</section>
