@@ -18,13 +18,16 @@
         private readonly string[] allowedExtensions = new[] { "jpg", "png", "gif" };
         private readonly IDeletableEntityRepository<Category> categoryRepository;
         private readonly IDeletableEntityRepository<Product> productRepository;
+        private readonly IRepository<Vote> votesRepository;
 
         public ProductService(
             IDeletableEntityRepository<Category> categoryRepository,
-            IDeletableEntityRepository<Product> productRepository)
+            IDeletableEntityRepository<Product> productRepository,
+            IRepository<Vote> votesRepository)
         {
             this.categoryRepository = categoryRepository;
             this.productRepository = productRepository;
+            this.votesRepository = votesRepository;
         }
 
         public async Task AddProduct(ProductInputModel inputModel, string imagePath, string userId)
@@ -58,6 +61,7 @@
                         AddedByUserId = userId,
                         Extension = extension,
                     };
+
                     newProduct.Images.Add(dbImage);
 
                     var physicalPath = $"{imagePath}/products/{dbImage.Id}.{extension}";
@@ -82,8 +86,37 @@
         }
 
         public int GetCount()
+        => this.productRepository.AllAsNoTracking().Count();
+
+        public T GetById<T>(string id)
+        => this.productRepository
+                .AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>()
+                .FirstOrDefault();
+
+        public IEnumerable<T> GetTopProducts<T>()
         {
-            return this.productRepository.AllAsNoTracking().Count();
+            var topProductsIds = this.votesRepository
+                .All()
+                .GroupBy(x => x.ProductId)
+                .OrderByDescending(x => x.Average(y => y.Value))
+                .Take(6).Select(x => x.First().ProductId)
+                .ToList();
+
+            return this.productRepository
+                .AllAsNoTracking()
+                .Where(x => topProductsIds.Any(y => x.Id == y))
+                .To<T>()
+                .ToList();
+        }
+
+        public IEnumerable<T> GetRandom<T>(int count)
+        {
+            return this.productRepository.All()
+                .OrderBy(x => Guid.NewGuid())
+                .Take(count)
+                .To<T>().ToList();
         }
     }
 }

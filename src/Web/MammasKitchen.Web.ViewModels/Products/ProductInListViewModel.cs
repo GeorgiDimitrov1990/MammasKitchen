@@ -18,6 +18,8 @@
 
         public string CategoryName { get; set; }
 
+        public decimal Price { get; set; }
+
         public void CreateMappings(IProfileExpression configuration)
         {
             configuration.CreateMap<Product, ProductInListViewModel>()

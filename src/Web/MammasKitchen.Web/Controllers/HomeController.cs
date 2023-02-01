@@ -2,18 +2,29 @@
 {
     using System.Diagnostics;
 
+    using MammasKitchen.Services.Data.Interfaces;
     using MammasKitchen.Web.ViewModels;
+    using MammasKitchen.Web.ViewModels.Products;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
-        public HomeController()
+        private readonly IProductService productService;
+
+        public HomeController(IProductService productService)
         {
+            this.productService = productService;
         }
 
         public IActionResult Index()
         {
-            return this.View();
+            var randomProducts = this.productService.GetRandom<ProductInListViewModel>(6);
+            var viewModel = new TopProductsViewModel
+            {
+                RandomProducts = randomProducts,
+            };
+
+            return this.View(viewModel);
         }
 
         public IActionResult Privacy()

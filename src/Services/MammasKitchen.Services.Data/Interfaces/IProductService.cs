@@ -12,5 +12,11 @@
         Task<IEnumerable<T>> GetItemsPerPageAsync<T>(int page, int itemsPerPage = 12);
 
         int GetCount();
+
+        T GetById<T>(string id);
+
+        IEnumerable<T> GetTopProducts<T>();
+
+        IEnumerable<T> GetRandom<T>(int count);
     }
 }

@@ -4,6 +4,7 @@ using MammasKitchen.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MammasKitchen.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230131050336_Add-Votes")]
+    partial class AddVotes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -569,7 +571,10 @@ namespace MammasKitchen.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ProductId")
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductId1")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId")
@@ -580,7 +585,7 @@ namespace MammasKitchen.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductId1");
 
                     b.HasIndex("UserId");
 
@@ -823,7 +828,7 @@ namespace MammasKitchen.Data.Migrations
                 {
                     b.HasOne("MammasKitchen.Data.Models.Product", "Product")
                         .WithMany("Votes")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId1");
 
                     b.HasOne("MammasKitchen.Data.Models.ApplicationUser", "User")
                         .WithMany()

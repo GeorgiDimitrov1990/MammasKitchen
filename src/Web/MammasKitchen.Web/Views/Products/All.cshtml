@@ -8,13 +8,17 @@
     <div class="row container">
         @foreach (var product in this.Model.Products)
         {
-            <div class="media col-md-4">
-                <img src="@product.ImageUrl" width="200" class="mr-3 img-responsive">
-                <div class="media-body">
-                    @*<h5 class="mt-0"><a asp-action="ById" asp-route-id="@product.Id">@product.Name</a></h5>*@
-                    @product.CategoryName
+            <div class="card m-2" style="width: 18rem;">
+                <a asp-action="ById" asp-route-id ="@product.Id">
+                    <img class="card-img-top d-inline-flex p-2 mt-3 rounded-4 " src="@product.ImageUrl" alt="Card image cap">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">Price $@product.Price</p>
+                    <a asp-action="ById" asp-route-id ="@product.Id" class="btn btn-primary">Details</a>
                 </div>
-            </div>}
+            </div>
+        }
     </div>
     <hr />
     <partial name="_PagingPartial" model="@Model">

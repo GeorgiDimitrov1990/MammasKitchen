@@ -35,5 +35,12 @@
 
             return this.View(viewModel);
         }
+
+        public IActionResult ById(string id)
+        {
+            var viewModel = this.productService.GetById<SingleProductViewModel>(id);
+
+            return this.View(viewModel);
+        }
     }
 }
